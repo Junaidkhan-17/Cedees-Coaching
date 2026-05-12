@@ -1,0 +1,185 @@
+.topper-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  border-radius: 17px;
+  box-shadow: var(--card-shadow);
+  padding: 0.5rem;
+  transform-origin: center center;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+  border: 1px solid rgba(43, 99, 202, 0.12);
+  contain: layout paint;
+  will-change: transform;
+}
+
+.topper-card[role="button"] {
+  cursor: pointer;
+}
+
+.topper-card[role="button"]:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.topper-card[role="button"]:focus-visible {
+  outline: 3px solid rgba(40, 90, 190, 0.45);
+  outline-offset: 2px;
+}
+
+.topper-card--current {
+  box-shadow: var(--card-shadow-hover);
+  z-index: 3;
+  transform: scale(1.015);
+  opacity: 1;
+}
+
+.topper-card--adjacent {
+  z-index: 2;
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.topper-card--far {
+  z-index: 1;
+  transform: scale(0.94);
+  opacity: 0.7;
+}
+
+.topper-image-wrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  min-height: 320px;
+  max-height: 410px;
+  background: #dfe8ff;
+}
+
+.topper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.06);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform, filter;
+}
+
+.topper-card--current .topper-image {
+  filter: saturate(1) contrast(1);
+}
+
+.topper-card--adjacent .topper-image {
+  transform: scale(1.02);
+  filter: saturate(0.88) contrast(0.94);
+}
+
+.topper-card--far .topper-image {
+  transform: scale(0.99);
+  filter: saturate(0.76) contrast(0.88);
+}
+
+.topper-content {
+  text-align: center;
+  padding: 0.74rem 0.35rem 0.66rem;
+}
+
+.topper-talk-caption {
+  margin: 0;
+  padding: 0.6rem 0.45rem 0.25rem;
+  text-align: center;
+  color: #1e2e50;
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.topper-content h3 {
+  margin: 0 0 0.35rem;
+  color: #243f78;
+  font-size: clamp(0.9rem, 1.2vw, 1.02rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.topper-content p {
+  margin: 0 0 0.45rem;
+  color: #1e2e50;
+  font-size: clamp(0.8rem, 1.02vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.topper-content > span {
+  display: inline-block;
+  color: #204eab;
+  font-size: clamp(0.78rem, 0.98vw, 0.86rem);
+  font-weight: 700;
+  background: rgba(42, 86, 183, 0.09);
+  padding: 0.3rem 0.72rem;
+  border-radius: 999px;
+}
+
+.topper-card--adjacent .topper-content {
+  opacity: 0.86;
+}
+
+.topper-card--far .topper-content {
+  opacity: 0.72;
+}
+
+
+@media (max-width: 991px) {
+  .topper-image-wrap {
+    min-height: 270px;
+    max-height: 335px;
+  }
+
+  .topper-content h3 {
+    font-size: 1rem;
+  }
+
+  .topper-content p {
+    font-size: 0.86rem;
+  }
+
+  .topper-talk-caption {
+    font-size: 0.84rem;
+  }
+
+  .topper-content > span {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .topper-card {
+    border-radius: 13px;
+    padding: 0.3rem;
+  }
+
+  .topper-image-wrap {
+    min-height: 246px;
+    max-height: 305px;
+    border-radius: 10px;
+  }
+
+  .topper-content {
+    padding: 0.58rem 0.28rem 0.54rem;
+  }
+
+  .topper-content h3 {
+    font-size: 0.88rem;
+  }
+
+  .topper-content p {
+    font-size: 0.78rem;
+  }
+
+  .topper-talk-caption {
+    font-size: 0.76rem;
+    padding: 0.52rem 0.35rem 0.18rem;
+  }
+
+  .topper-content > span {
+    font-size: 0.74rem;
+    padding: 0.25rem 0.54rem;
+  }
+}

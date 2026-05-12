@@ -1,0 +1,109 @@
+.makespecial-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  border-radius: 17px;
+  box-shadow: var(--card-shadow);
+  padding: 0.5rem;
+  transform-origin: center center;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  border: 1px solid rgba(43, 99, 202, 0.12);
+}
+
+.makespecial-card[role="button"] {
+  cursor: pointer;
+}
+
+.makespecial-card[role="button"]:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.makespecial-card--current {
+  box-shadow: var(--card-shadow-hover);
+  z-index: 3;
+}
+
+.makespecial-card--adjacent {
+  z-index: 2;
+}
+
+.makespecial-card--far {
+  z-index: 1;
+}
+
+.makespecial-image-wrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  min-height: 320px;
+  max-height: 410px;
+  background: #dfe8ff;
+}
+
+.makespecial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.06);
+  will-change: transform, filter;
+}
+
+.makespecial-content {
+  text-align: center;
+  padding: 0.7rem 0.35rem 0.62rem;
+}
+
+.makespecial-content h3 {
+  margin: 0 0 0.35rem;
+  color: #243f78;
+  font-size: clamp(0.88rem, 1.14vw, 1.02rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.makespecial-content p {
+  margin: 0 0 0.45rem;
+  color: #1e2e50;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.makespecial-content > span {
+  display: inline-block;
+  color: #204eab;
+  font-size: clamp(0.76rem, 0.95vw, 0.86rem);
+  font-weight: 700;
+  background: rgba(42, 86, 183, 0.09);
+  padding: 0.3rem 0.72rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 991px) {
+  .makespecial-image-wrap {
+    min-height: 270px;
+    max-height: 335px;
+  }
+}
+
+@media (max-width: 767px) {
+  .makespecial-card {
+    border-radius: 13px;
+    padding: 0.3rem;
+  }
+
+  .makespecial-image-wrap {
+    min-height: 246px;
+    max-height: 305px;
+    border-radius: 10px;
+  }
+
+  .makespecial-content {
+    padding: 0.58rem 0.28rem 0.54rem;
+  }
+
+  .makespecial-content h3 {
+    font-size: 0.84rem;
+    line-height: 1.28;
+  }
+}

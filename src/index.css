@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg-soft: #edf3ff;
+  --bg-soft-2: #dce8ff;
+  --bg-white: #ffffff;
+  --surface: #f8fbff;
+  --text-primary: #1f4a9e;
+  --text-dark: #1d2b4f;
+  --muted: #566991;
+  --btn-blue: #2153b8;
+  --btn-red: #e45547;
+  --border-soft: rgba(37, 89, 188, 0.15);
+  --card-shadow: 0 10px 28px rgba(19, 51, 116, 0.14);
+  --card-shadow-hover: 0 16px 34px rgba(19, 51, 116, 0.22);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 12px 28px rgba(20, 56, 124, 0.14);
+  --shadow-strong: 0 18px 38px rgba(20, 56, 124, 0.2);
+  --section-space-y: clamp(2rem, 4vw, 3.1rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  font-size: clamp(0.95rem, 0.35vw + 0.9rem, 1rem);
+  color: var(--text-dark);
+  background: var(--bg-soft);
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  color: #fff;
+  background: #2c63c8;
+}
+
+*:focus-visible {
+  outline: 3px solid rgba(41, 92, 194, 0.42);
+  outline-offset: 2px;
+}
+
+.container {
+  width: min(1280px, calc(100% - 2.2rem));
+}
+
+.image-gallery-wrap,
+.session-gallery-wrap,
+.contact-shell {
+  backdrop-filter: blur(2px);
+}
+
+.image-scroll {
+  transform: scale(1.02);
+  transition: transform 0.65s ease;
+  animation: imagePan 12s ease-in-out infinite alternate;
+}
+
+.image-scroll:hover {
+  transform: scale(1.08);
+}
+
+@keyframes imagePan {
+  0% {
+    transform: scale(1.02) translateY(0);
+  }
+  100% {
+    transform: scale(1.08) translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .image-scroll {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: min(1280px, calc(100% - 1rem));
+  }
+
+  body {
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: min(1280px, calc(100% - 0.85rem));
+  }
+
+  .image-gallery-wrap,
+  .session-gallery-wrap,
+  .contact-shell {
+    backdrop-filter: none;
+  }
+}

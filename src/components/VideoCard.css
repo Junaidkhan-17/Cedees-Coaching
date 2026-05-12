@@ -1,0 +1,129 @@
+.video-card {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(31, 77, 167, 0.12);
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.video-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-image {
+  width: 100%;
+  height: clamp(210px, 32vw, 330px);
+  object-fit: cover;
+}
+
+.play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: rgba(20, 37, 75, 0.48);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.video-card:hover .play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-feature-overlay {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.66rem;
+  background: rgba(247, 250, 255, 0.95);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.58rem 0.72rem;
+}
+
+.video-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 12px rgba(23, 62, 140, 0.2);
+}
+
+.video-feature-overlay h3 {
+  margin: 0;
+  color: #233f78;
+  font-size: clamp(0.9rem, 1.35vw, 1.25rem);
+  font-weight: 700;
+}
+
+.video-feature-overlay p {
+  margin: 0;
+  color: #3f5788;
+  font-size: clamp(0.76rem, 1.05vw, 0.95rem);
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .video-image {
+    height: clamp(190px, 50vw, 300px);
+  }
+
+  .play-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.35rem;
+  }
+
+  .video-feature-overlay {
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.5rem;
+    padding: 0.5rem 0.62rem;
+  }
+
+  .video-user-avatar {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 575px) {
+  .video-card {
+    border-radius: 10px;
+  }
+
+  .video-image {
+    height: clamp(175px, 58vw, 250px);
+  }
+
+  .play-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+
+  .video-feature-overlay {
+    border-radius: 8px;
+    gap: 0.56rem;
+  }
+}

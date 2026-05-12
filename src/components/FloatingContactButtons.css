@@ -1,0 +1,75 @@
+.floating-contact-buttons {
+  position: fixed;
+  right: max(0.82rem, env(safe-area-inset-right));
+  bottom: max(0.82rem, env(safe-area-inset-bottom));
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.floating-contact-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(18, 44, 98, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-contact-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-contact-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.floating-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 28px rgba(18, 44, 98, 0.36);
+  color: #fff;
+}
+
+.floating-contact-btn:active {
+  transform: translateY(0);
+}
+
+.whatsapp-btn {
+  background: linear-gradient(180deg, #28c662 0%, #1ea851 100%);
+}
+
+.call-btn {
+  background: linear-gradient(180deg, #2a62ca 0%, #1f4ca8 100%);
+}
+
+@media (max-width: 767px) {
+  .floating-contact-buttons {
+    right: max(0.62rem, env(safe-area-inset-right));
+    bottom: max(0.62rem, env(safe-area-inset-bottom));
+    gap: 0.42rem;
+  }
+
+  .floating-contact-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .floating-contact-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}

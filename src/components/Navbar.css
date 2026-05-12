@@ -1,0 +1,219 @@
+.cedees-navbar {
+  background: rgba(251, 253, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(31, 77, 167, 0.11);
+  box-shadow: 0 8px 28px rgba(19, 51, 116, 0.08);
+}
+
+.cedees-navbar-inner {
+  min-height: 74px;
+}
+
+.cedees-logo {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-image{
+  width: clamp(56px, 7vw, 68px);
+  height: auto;
+  margin-bottom: 0.12rem;
+}
+
+.logo-main {
+  color: #21499f;
+  font-weight: 800;
+  font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+  letter-spacing: 0.01em;
+}
+
+.logo-sub {
+  color: #4c5d89;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+}
+
+.cedees-nav-link {
+  color: #2a3f72;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.02vw, 1.01rem);
+  letter-spacing: 0.01em;
+  padding: 0.5rem 0.72rem !important;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.cedees-nav-link:hover {
+  color: #1b4cb4;
+  background: rgba(33, 82, 186, 0.11);
+}
+
+.cedees-nav-link:focus-visible {
+  outline: 2px solid rgba(33, 82, 186, 0.38);
+  outline-offset: 2px;
+}
+
+.cedees-contact-btn {
+  background: linear-gradient(180deg, #f26768 0%, #de474a 100%);
+  color: #fff;
+  border: 0;
+  border-radius: 11px;
+  padding: 0.62rem 1.05rem;
+  min-height: 42px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 20px rgba(224, 67, 72, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cedees-contact-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(224, 67, 72, 0.3);
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(28, 78, 173, 0.25);
+  border-radius: 10px;
+  padding: 0.32rem 0.48rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(33, 82, 186, 0.23);
+}
+
+.cedees-nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .cedees-navbar-inner {
+    min-height: auto;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .logo-main {
+    font-size: 1.34rem;
+  }
+
+  .logo-sub {
+    font-size: 0.79rem;
+  }
+
+  .cedees-nav-link {
+    font-size: 0.9rem;
+    padding: 0.58rem 0.72rem !important;
+  }
+
+  .cedees-contact-btn {
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    padding: 0.62rem 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    z-index: 1302;
+  }
+
+  .cedees-mobile-drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(84vw, 325px);
+    height: 100dvh;
+    margin-top: 0;
+    border-radius: 0;
+    padding: 5.3rem 0.9rem 1rem;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, rgba(252, 254, 255, 0.98) 0%, rgba(241, 247, 255, 0.98) 100%);
+    border-left: 1px solid rgba(31, 77, 167, 0.16);
+    box-shadow: -12px 0 28px rgba(19, 51, 116, 0.14);
+    transform: translateX(104%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.28s ease, opacity 0.22s ease;
+    overflow-y: auto;
+    z-index: 1301;
+  }
+
+  .cedees-mobile-drawer.show {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .cedees-mobile-drawer .navbar-nav {
+    width: 100%;
+    margin: 0 !important;
+    gap: 0.16rem;
+  }
+
+  .cedees-mobile-drawer .nav-item {
+    width: 100%;
+  }
+
+  .cedees-mobile-drawer .cedees-nav-link {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    padding: 0.66rem 0.7rem !important;
+  }
+
+  .cedees-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    border: 0;
+    margin: 0;
+    background: rgba(16, 34, 73, 0.28);
+    backdrop-filter: blur(1px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.26s ease;
+    z-index: 1300;
+  }
+
+  .cedees-nav-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .cedees-navbar-inner {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .logo-main {
+    font-size: 1.15rem;
+  }
+
+  .logo-sub {
+    font-size: 0.72rem;
+  }
+
+  .cedees-nav-link {
+    font-size: 0.86rem;
+  }
+
+  .cedees-contact-btn {
+    font-size: 0.86rem;
+    min-height: 40px;
+  }
+
+  .navbar-toggler {
+    padding: 0.28rem 0.4rem;
+  }
+}

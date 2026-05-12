@@ -1,0 +1,40 @@
+.section-title {
+  margin-bottom: clamp(1rem, 2.2vw, 1.55rem);
+  max-width: 172ch;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #1c4397;
+  font-size: clamp(1.35rem, 2.6vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.section-title p {
+  margin: 0.45rem 0 0;
+  color: #5a6f9e;
+  font-size: clamp(0.82rem, 1.05vw, 1rem);
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 162ch;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    margin-bottom: 1.05rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.16rem, 6.2vw, 1.52rem);
+    line-height: 1.22;
+  }
+
+  .section-title p {
+    margin-top: 0.28rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}

@@ -1,0 +1,33 @@
+.review-card {
+  min-height: auto;
+}
+
+.review-card .topper-content h3 {
+  margin-bottom: 0.22rem;
+}
+
+.review-image-wrap {
+  min-height: 320px;
+  max-height: 410px;
+}
+
+.review-card .topper-content p {
+  margin-bottom: 0;
+  color: #4f618b;
+  font-size: clamp(0.78rem, 0.96vw, 0.86rem);
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .review-image-wrap {
+    min-height: 270px;
+    max-height: 335px;
+  }
+}
+
+@media (max-width: 767px) {
+  .review-image-wrap {
+    min-height: 246px;
+    max-height: 305px;
+  }
+}
